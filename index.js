@@ -19,9 +19,12 @@ const createBoxes = (numBox) => { // Function to create a grid of boxes
   }
 }
 
-function removeBoxes(numBox){
+function removeBoxes(){
     const container = document.querySelector("#container");
-    for (let i = 0; i < numBox; i++) {
+    const numChildren = container.children.length;
+
+
+    for (let i = 0; i < numChildren; i++) {
         const child = container.querySelector('div'); //New Children need to be selected before removing.
         container.removeChild(child); // Removes row of the grid.
     }
@@ -32,8 +35,8 @@ const resetButton = document.createElement('button');
 resetButton.textContent = 'Reset!';
 document.body.appendChild(resetButton);
 resetButton.addEventListener('click', () =>{
-    let num = prompt('Number to be cubed.');
-    removeBoxes(num);
+    //let num = prompt('Number to be cubed.');
+    removeBoxes();
 });
 
 const createButton = document.createElement('button');
