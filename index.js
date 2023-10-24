@@ -32,7 +32,7 @@ function removeBoxes(){
 
 
 const resetButton = document.createElement('button');
-resetButton.textContent = 'Reset!';
+resetButton.textContent = 'Shake!';
 document.body.appendChild(resetButton);
 resetButton.addEventListener('click', () =>{
     //let num = prompt('Number to be cubed.');
@@ -43,8 +43,6 @@ const createButton = document.createElement('button');
 createButton.textContent = 'Create new grid!';
 document.body.appendChild(createButton);
 createButton.addEventListener('click', () =>{
-    //const container = document.createElement('#containter');
-    //let num = prompt('Number to be cubed.');
     let num = prompt('Number to be cubed.');
     createBoxes(num);
 });

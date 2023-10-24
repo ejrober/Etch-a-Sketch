@@ -1,4 +1,14 @@
+#container {
+    width: 500px;
+    height: 500px;
+    margin: auto;
+    display: flex;
+    overflow-wrap: break-word;
+  }
 
+  #container>div {
+    height: 25px;
+  }
 
 .box {
     border: 1px solid red;
@@ -6,16 +16,4 @@
     display: inline-block;
     width: 25px;
     height: 25px;
-    
-  }
-  
-  #container {
-    width: 500px;
-    height: 500px;
-    
-  }
-  
-  #container>div {
-    height: 25px;
-    
-  }
+}
