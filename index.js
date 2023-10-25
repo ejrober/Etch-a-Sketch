@@ -31,6 +31,7 @@ function removeBoxes(){
 }
 
 
+
 const resetButton = document.createElement('button');
 resetButton.textContent = 'Shake!';
 document.body.appendChild(resetButton);
