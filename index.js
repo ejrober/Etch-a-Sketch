@@ -1,7 +1,3 @@
-////const container = document.querySelector('#container');
-//const row = container.appendChild(document.createElement('div'));
-
-
 const createBoxes = (numBox) => { // Function to create a grid of boxes
   const container = document.querySelector('#container');
   for (let i = 0; i < numBox; i++) { // iterate to the number of boxes given
@@ -13,11 +9,19 @@ const createBoxes = (numBox) => { // Function to create a grid of boxes
       // Add a mouseover event listener
       square.addEventListener('mouseover', () => {
       // Change the button's background color
-      square.style.backgroundColor = 'blue';
+      square.style.backgroundColor = randomHexString();
+      square.style.opacity += 0.5;
       });
     }
   }
+
 }
+
+const randomHexString = () => {
+  let n = (Math.random() * 0xfffff * 1000000).toString(16);
+  return '#' + n.slice(0, 6);
+};
+
 
 function removeBoxes(){
     const container = document.querySelector("#container");
@@ -31,20 +35,19 @@ function removeBoxes(){
 }
 
 
-
-const resetButton = document.createElement('button');
-resetButton.textContent = 'Shake!';
-document.body.appendChild(resetButton);
-resetButton.addEventListener('click', () =>{
-    //let num = prompt('Number to be cubed.');
-    removeBoxes();
+const shakeButton = document.querySelector('#shake');
+shakeButton.addEventListener('click', () =>{
+  removeBoxes();
 });
 
-const createButton = document.createElement('button');
-createButton.textContent = 'Create new grid!';
-document.body.appendChild(createButton);
-createButton.addEventListener('click', () =>{
-    let num = prompt('Number to be cubed.');
+
+const newButton = document.querySelector('#new');
+newButton.addEventListener('click', () =>{
+  let num = prompt('Number of squares per side.');
+  while (num > 100) {
+    num = prompt('Number of squares per side < 100.');
+  }
     createBoxes(num);
 });
+
 createBoxes(16);
